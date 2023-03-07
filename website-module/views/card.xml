@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+
+    <record model="ir.ui.view" id="card_tree_view">
+            <field name="name">card.tree</field>
+            <field name="model">care.card</field>
+            <field name="arch" type="xml">
+                <tree string="care card Tree">
+<!--                    <field name="name"/>-->
+
+                    <field name="card_no"/>
+                    <field name="name"/>
+                    <field name="issue_date"/>
+                         <field name="validity_date" />
+                    <field name="state" decoration-success =" state == 'active'" decoration-info="state == 'inactive'" widget="badge"/>
+                    <field name="card_balance"/>
+                    <field name="note"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+
+    <record model="ir.ui.view" id="card_form_view">
+            <field name="name">card.form</field>
+            <field name="model">care.card</field>
+            <field name="arch" type="xml">
+                <form string="care card Form">
+                    <sheet>
+
+                        <div class="oe_title">
+                           <h1>
+                               <field name="card_no" readonly="1"/>
+                           </h1>
+                        </div>
+                         <group>
+
+
+                    <field name="name"/>
+                    <field name="issue_date" />
+                             <field name="validity_date" />
+
+                    <field name="state" />
+                    <field name="card_balance" widget="monetary"/>
+                         </group>
+                            <notebook>
+                            <page string="Note">
+                            <field name="note" />
+
+                            <!--                                    <tree string="Registered sessions">-->
+                            <!--                                        <field name="theme_event"/>-->
+                            <!--                                    </tree>-->
+                            </page>
+                            </notebook>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="card_list_action">
+            <field name="name">card</field>
+            <field name="res_model">care.card</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create first Care Card
+                </p>
+            </field>
+        </record>
+    <menuitem id="card_menu" name="Care Card"
+                  action="card_list_action"  />
+</odoo>

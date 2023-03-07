@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+        <record id="seq_care_card" model="ir.sequence">
+        <field name="name"> Care Card </field>
+             <field name="code">website.module.careCard</field>
+            <field name="prefix">CR</field>
+            <field name="padding"> 10</field>
+            <field name="company_id" eval="False"/>
+
+
+        </record>
+    </data>
+</odoo>

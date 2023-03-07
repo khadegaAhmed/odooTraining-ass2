@@ -1,0 +1,62 @@
+<odoo>
+
+    <template id="index">
+        <title>Care Card</title>
+
+
+        <t t-call="website.layout">
+            <t t-set="title">CARE CARD </t>
+            <div class="oe_structure"/>
+<!--            <div class="oe_structure">-->
+                <div class="container">
+                    <caption> Care Card</caption>
+            <table border="2">
+
+                <thead>
+                <tr>
+                    <th>
+                        Card Number
+                    </th>
+                    <th>
+                        Beneficiary
+                    </th>
+                    <th>
+                        Card Issue Date
+                    </th>
+                    <th>
+                        Validity Date
+                    </th>
+                    <th>
+                       Card State
+                    </th>
+                    <th>
+                       Card Balance
+                    </th>
+                    <th>
+                        Note
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                     <t t-foreach="bf" t-as="b">
+                    <tr>
+                         <td> <t t-esc="b.card_no"/> </td>
+                        <td> <t t-esc="b.name"/> </td>
+                          <td> <t t-esc="b.issue_date"/></td>
+                        <td> <t t-esc="b.validity_date"/></td>
+                        <td> <t t-esc="b.state"/></td>
+                        <td> <t t-esc="b.card_balance"/></td>
+                        <td> <t t-esc="b.note"/></td>
+                    </tr>
+                     </t>
+                </tbody>
+            </table>
+
+          </div>
+
+        </t>
+
+
+    </template>
+
+</odoo>
